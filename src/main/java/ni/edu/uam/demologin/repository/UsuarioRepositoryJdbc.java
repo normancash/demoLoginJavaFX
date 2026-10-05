@@ -18,9 +18,6 @@ public class UsuarioRepositoryJdbc implements UsuarioRepository{
 
     private final PostgreSQLConnection connection;
 
-
-
-
     @Override
     public List<Usuario> findAll() throws Exception{
         String sql = "SELECT id" +

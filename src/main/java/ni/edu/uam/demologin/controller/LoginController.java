@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import ni.edu.uam.demologin.model.Usuario;
 import ni.edu.uam.demologin.service.NavegationService;
+import ni.edu.uam.demologin.service.UsuarioService;
 
 public class LoginController {
 
@@ -17,6 +19,12 @@ public class LoginController {
 
     private final NavegationService
             navegationService = new NavegationService();
+
+    private final UsuarioService service;
+
+    public LoginController() {
+        this.service = new UsuarioService();
+    }
 
     @FXML
     private void iniciarSesion(ActionEvent actionEvent){
@@ -30,11 +38,14 @@ public class LoginController {
             );
         }
         else {
-            UtilController.mostrarMensaje(
-                    Alert.AlertType.INFORMATION,
-                    "Bienvenido",
-                    "Inicio de sesion correcto"
-            );
+            Usuario u = service.findByLogin(usuario,password);
+            if (u != null) {
+                UtilController.mostrarMensaje(
+                        Alert.AlertType.INFORMATION,
+                        "Bienvenido",
+                        "Inicio de sesion correcto"
+                );
+            }
         }
     }
 

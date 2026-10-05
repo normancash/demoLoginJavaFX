@@ -3,6 +3,8 @@ package ni.edu.uam.demologin.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PostgreSQLConnection {
 
@@ -11,10 +13,15 @@ public class PostgreSQLConnection {
     private static final String usuario = "postgres";
     private static final String password = "admin";
 
-    public Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(
-                URL
-                ,usuario
-                ,password);
+    public Connection getConnection()  {
+        try {
+            return DriverManager.getConnection(
+                    URL
+                    , usuario
+                    , password);
+        }
+        catch (SQLException ex) {
+            return null;
+        }
     }
 }
