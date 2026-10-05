@@ -6,9 +6,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UsuarioRepository {
-    List<Usuario> findAl();
+    List<Usuario> findAll() throws Exception;
 
-    Optional<Usuario> findById(String id);
+    Optional<Usuario> findById(String id) throws Exception;
 
-    void save(Usuario usuario);
+    void save(Usuario usuario) throws Exception;
+
+    Optional<Usuario> findByLogin(String usuario
+            ,String password) throws Exception;
 }

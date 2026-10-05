@@ -31,7 +31,7 @@ public class UsuarioModalController {
     public void setUsuario(Usuario usuario) {
         lblNombre.setText(usuario.getNombre());
         lblApellido.setText(usuario.getApellido());
-        lblCorreo.setText(usuario.getEmail());
+        lblCorreo.setText(usuario.getCorreo());
         lblUsuario.setText(usuario.getUsuario());
         lblRutaFoto.setText(usuario.getRutafoto());
 

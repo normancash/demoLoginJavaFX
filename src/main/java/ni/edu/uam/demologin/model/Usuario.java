@@ -1,10 +1,11 @@
 package ni.edu.uam.demologin.model;
 
-public class Usuario {
+import java.util.UUID;
 
+public class Usuario extends BaseEntity{
     private String nombre;
     private String apellido;
-    private String email;
+    private String correo;
     private String password;
     private String usuario;
     private String rutafoto;
@@ -12,15 +13,18 @@ public class Usuario {
     public Usuario(String nombre, String apellido
             , String email, String password
             , String usuario,String rutafoto) {
+        super();
         this.nombre = nombre;
         this.apellido = apellido;
-        this.email = email;
+        this.correo = email;
         this.password = password;
         this.usuario = usuario;
         this.rutafoto = rutafoto;
     }
 
-    public Usuario() {}
+    public Usuario() {
+        super();
+    }
 
     public String getUsuario() {
         return usuario;
@@ -46,12 +50,12 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getPassword() {
