@@ -27,7 +27,7 @@ public class LoginController {
     }
 
     @FXML
-    private void iniciarSesion(ActionEvent actionEvent){
+    private void iniciarSesion(ActionEvent actionEvent) throws Exception {
         String usuario = txtUsuario.getText();
         String password = txtPassword.getText();
         if (usuario.isBlank() || password.isBlank()) {
@@ -38,7 +38,8 @@ public class LoginController {
             );
         }
         else {
-            Usuario u = service.findByLogin(usuario,password);
+            Usuario u = service.findByLogin(usuario,password)
+                    .orElse(null);
             if (u != null) {
                 UtilController.mostrarMensaje(
                         Alert.AlertType.INFORMATION,
