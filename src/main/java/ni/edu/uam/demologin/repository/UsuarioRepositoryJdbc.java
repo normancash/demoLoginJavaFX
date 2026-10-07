@@ -1,5 +1,6 @@
 package ni.edu.uam.demologin.repository;
 
+import ni.edu.uam.demologin.config.IConnection;
 import ni.edu.uam.demologin.config.PostgreSQLConnection;
 import ni.edu.uam.demologin.model.Usuario;
 
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
 
 public class UsuarioRepositoryJdbc implements UsuarioRepository{
 
-    private final PostgreSQLConnection connection;
+    private final IConnection connection;
 
     @Override
     public List<Usuario> findAll() throws Exception{
@@ -49,7 +50,7 @@ public class UsuarioRepositoryJdbc implements UsuarioRepository{
         }
     }
 
-    public UsuarioRepositoryJdbc(PostgreSQLConnection connection) {
+    public UsuarioRepositoryJdbc(IConnection connection) {
         this.connection = connection;
     }
 
