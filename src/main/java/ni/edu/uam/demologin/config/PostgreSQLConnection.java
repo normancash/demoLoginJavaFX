@@ -8,10 +8,10 @@ import java.util.logging.Logger;
 
 public class PostgreSQLConnection implements IConnection {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/";
+    private static final String URL = "jdbc:postgresql://localhost:5432/estudiante";
 
     private static final String usuario = "postgres";
-    private static final String password = "admin";
+    private static final String password = "1234";
 
     @Override
     public Connection getConnection()  {

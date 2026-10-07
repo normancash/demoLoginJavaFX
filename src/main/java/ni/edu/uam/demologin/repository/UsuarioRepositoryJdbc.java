@@ -113,15 +113,9 @@ public class UsuarioRepositoryJdbc implements UsuarioRepository{
     @Override
     public Optional<Usuario> findByLogin(String usuario
             , String password) throws Exception {
-        final String sql = "SELECT id," +
-                "usuario," +
-                "correo," +
-                "password" +
-                " FROM " +
-                "usuario" +
-                " WHERE usuario = ? AND password = ?";
+        final String sql = " SELECT id,usuario,correo,password FROM public.usuario WHERE usuario = ? AND password = ? ";
         try(Connection con= connection.getConnection();
-            PreparedStatement ps = con.prepareStatement(sql);           )
+            PreparedStatement ps = con.prepareStatement(sql);)
         {
             ps.setString(1,usuario);
             ps.setString(2,password);
@@ -132,6 +126,7 @@ public class UsuarioRepositoryJdbc implements UsuarioRepository{
                 u.setPassword(rs.getString("password"));
                 u.setCorreo(rs.getString("correo"));
                 u.setId(rs.getObject("id",UUID.class));
+                return Optional.of(u);
             }
         }
         return Optional.empty();
