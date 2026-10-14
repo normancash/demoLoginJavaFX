@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Text?>
 <AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ni.edu.uam.demologin.controller.RegistroController"
+      prefHeight="400.0" prefWidth="600.0" >
+    <VBox spacing="10"
+          AnchorPane.rightAnchor="30"
+          AnchorPane.leftAnchor="30"
+          AnchorPane.bottomAnchor="15"
+          AnchorPane.topAnchor="15"
+    >
+       <Label text="REGISTRO DE USUARIO"
+              style="-fx-font-size:24px;-fx-font-width: bold;"/>
+       <GridPane hgap="10" vgap="10">
+           <columnConstraints>
+               <ColumnConstraints prefWidth="150"/>
+           </columnConstraints>
+           <Label text="Nombre"
+                 GridPane.columnIndex="0"
+                 GridPane.rowIndex="0"
+           />
+           <TextField fx:id="txtNombre"
+                      GridPane.columnIndex="0"
+                      GridPane.rowIndex="1"
+           />
+           <Label text="Apellido"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="0"
+           />
+           <TextField fx:id="txtApellido"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="1"
+           />
+           <Label text="Correo"
+                  GridPane.columnIndex="0"
+                  GridPane.rowIndex="2"
+           />
+           <TextField fx:id="txtCorreo"
+                  GridPane.columnIndex="0"
+                  GridPane.rowIndex="3"
+                  promptText="correo@ejemplo.com"
+           />
+           <Label text="Usuario"
+                  GridPane.columnIndex="0"
+                  GridPane.rowIndex="4"
+           />
+           <TextField fx:id="txtUsuario"
+                      GridPane.columnIndex="0"
+                      GridPane.rowIndex="5"
+                      GridPane.columnSpan="2"
+           />
+           <Label text="Contraseña"
+                  GridPane.columnIndex="0"
+                  GridPane.rowIndex="6"/>
+           <PasswordField fx:id="txtPassword"
+                      GridPane.columnIndex="0"
+                      GridPane.rowIndex="7"
+                      GridPane.columnSpan="2"/>
+           <Label text="Confirmar Contraseña"
+                  GridPane.columnIndex="0"
+                  GridPane.rowIndex="8"/>
+           <PasswordField fx:id="txtConfirmaPassword"
+                          GridPane.columnIndex="0"
+                          GridPane.rowIndex="9"
+                          GridPane.columnSpan="2"
+           />
+       </GridPane>
+    </VBox>
 </AnchorPane>

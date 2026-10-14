@@ -53,7 +53,7 @@ public class LoginController {
     @FXML
     private void abrirRegistro(ActionEvent actionEvent){
         try {
-            navegationService.cambiarVista("registrar.fxml");
+            navegationService.cambiarVista("registro.fxml",txtUsuario);
         }catch (Exception e){
             UtilController.mostrarMensaje(
                     Alert.AlertType.ERROR,

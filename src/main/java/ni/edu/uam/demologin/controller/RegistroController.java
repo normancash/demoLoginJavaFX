@@ -161,7 +161,7 @@ public class RegistroController {
     private void regresar(ActionEvent event) {
         try {
             navegationService.cambiarVista(
-                    "login.fxml"
+                    "login.fxml",txtUsuario
             );
         }catch (Exception e){
            UtilController.mostrarException(e);
